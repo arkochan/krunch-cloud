@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex mx-6 border min-h-screen flex-col ">
+    <main className="flex mx-6 min-h-screen flex-col ">
       <HeadBar className="mt-8 " />
       <div className="text-3xl mt-8 font-bold text-gray-32">
         What would you like <br />
         to order?
       </div>
-      <div className="flex flex-row ">
+      <div className="flex flex-row mt-5">
         <SearchBar placeholder={"Find for food or restaurant..."} />
         <button className="aspect-square rounded-2xl flex items-center justify-center ml-4 shadow-1">
           {" "}

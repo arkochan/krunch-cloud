@@ -6,7 +6,7 @@ export default function HeardBar({ className = "" }: { className: string }) {
     <div
       className={cn(
         className,
-        "flex border flex-row h-full items-start justify-between w-full",
+        "flex flex-row text-sm leading-none h-full items-start justify-between w-full",
       )}
     >
       <div>
@@ -27,10 +27,11 @@ export default function HeardBar({ className = "" }: { className: string }) {
           </svg>
         </button>
       </div>
-      <div className=" flex flex-col">
-        <span className="flex flex-row text-blue-gray-9A">
+      <div className=" flex flex-col items-center font-medium">
+        <span className="flex flex-row items-center text-blue-gray-9A">
           Deliver to{" "}
           <svg
+            className=""
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -46,7 +47,7 @@ export default function HeardBar({ className = "" }: { className: string }) {
           </svg>
         </span>
         {/* //TODO: Add Location*/}
-        <div className="text-peach-300">Location</div>
+        <span className="text-orange-FE">Location</span>
       </div>
       <Image
         className=" size-9 rounded-xl "
