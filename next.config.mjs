@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: "/free-psd/**",
       },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
