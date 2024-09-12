@@ -1,3 +1,4 @@
+import FilterBar from "@/components/FilterBar";
 import HeadBar from "@/components/Headbar";
 import SearchBar from "@/components/SearchBar";
 import Image from "next/image";
@@ -39,6 +40,7 @@ export default function Home() {
           </svg>
         </button>
       </div>
+      <FilterBar className="mt-8" />
     </main>
   );
 }
