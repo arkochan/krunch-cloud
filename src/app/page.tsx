@@ -40,7 +40,7 @@ export default function Home() {
           </svg>
         </button>
       </div>
-      <FilterBar className="mt-8" />
+      <FilterBar className="mt-7" />
     </main>
   );
 }
