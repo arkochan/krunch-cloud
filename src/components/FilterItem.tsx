@@ -23,9 +23,7 @@ export default function FilterItem({
       <div className="overflow-hidden mb-2 rounded-full bg-white w-14">
         <Image src={imageSource} alt={"FoodItem"} width={150} height={150} />
       </div>
-      <span
-        className={cn("text-xs", selected ? "text-white" : "text-gray-7E")}
-      >
+      <span className={cn("text-xs", selected ? "text-white" : "text-gray-7E")}>
         {itemTitle}
       </span>
     </div>
