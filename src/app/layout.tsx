@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans as Sans } from "next/font/google";
+import { Cabin as Sans } from "next/font/google";
 import "./globals.css";
 
 const sans = Sans({ subsets: ["latin"] });
