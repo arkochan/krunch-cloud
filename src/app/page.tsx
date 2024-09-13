@@ -1,5 +1,6 @@
 import FilterBar from "@/components/FilterBar";
 import HeadBar from "@/components/Headbar";
+import RestaurantCard from "@/components/RestaurantCard";
 import SearchBar from "@/components/SearchBar";
 import Image from "next/image";
 
@@ -41,6 +42,28 @@ export default function Home() {
         </button>
       </div>
       <FilterBar className="mt-7" />
+      <div>
+        <RestaurantCard
+          name="McDonald's"
+          verified={true}
+          deliveryTime="10-15"
+          deliveryCharge={0}
+          rating={4.5}
+          rateCaount={24}
+          favourite={true}
+          tags={["Fast Food", "Burger"]}
+        />
+        <RestaurantCard
+          name="Burger King"
+          verified={true}
+          deliveryTime="30-40"
+          deliveryCharge={0}
+          rating={4.5}
+          rateCaount={100}
+          favourite={true}
+          tags={["Fast Food", "Burger"]}
+        />
+      </div>
     </main>
   );
 }
