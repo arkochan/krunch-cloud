@@ -42,8 +42,12 @@ export default function Home() {
         </button>
       </div>
       <FilterBar className="mt-7" />
+      <div className="flex flex-row mt-7 justify-between">
+        <span className="font-bold ">Featured Restaurants</span>
+        <span className="text-orange-FE">View All &gt;</span>
+      </div>
       {/* Restaurant Cards //TODO the card should have a little white space at end */}
-      <div className=" pr-72 overflow-x-scroll mt-8 -mx-6">
+      <div className=" pr-72 overflow-x-scroll mt-4 -mx-6">
         <div className="  pb-4 ml-6 flex flex-row">
           <RestaurantCard
             className="mr-6"
@@ -68,6 +72,10 @@ export default function Home() {
             tags={["Fast Food", "Burger"]}
           />
         </div>
+      </div>
+      <div>
+        <p>Popular Items</p>
+        <div></div>
       </div>
     </main>
   );
