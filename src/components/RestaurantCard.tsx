@@ -7,7 +7,7 @@ export default function RestaurantCard({
   deliveryTime,
   deliveryCharge,
   rating,
-  rateCaount,
+  rateCaount: rateCount,
   favourite,
   tags,
   className = "",
@@ -23,20 +23,63 @@ export default function RestaurantCard({
   className?: string;
 }) {
   return (
-    <div className={cn("w-64 overflow-hidden rounded-lg shadow", className)}>
-      <div> </div>
+    <div
+      className={cn(
+        "min-w-64 h-[236px] overflow-hidden rounded-lg shadow relative ",
+        className,
+      )}
+    >
+      {/* Rating*/}
+      <div className="flex flex-row space-x-1 bg-white rounded-full absolute top-2 left-2 px-2 py-1 items-center">
+        <span className="text-xs font-bold">{rating}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="sharp"
+          stroke-linejoin="sharp"
+          className="text-yellow size-3 icon icon-tabler icons-tabler-outline icon-tabler-star mb-[3px]"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+        </svg>
+        <span className="text-[8px]/4 text-gray-97">({rateCount})</span>
+      </div>
+      {/* Favourite */}
+      <div className="text-white size-7 absolute top-2 bg-orange-FE flex items-center justify-cente rounded-full p-1  right-2">
+        {/* Heart Svg */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill={favourite ? "currentColor" : "none"}
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          className="icon icon-tabler icons-tabler-outline icon-tabler-heart"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+        </svg>
+      </div>
       <Image
         src="https://images.pexels.com/photos/4958773/pexels-photo-4958773.jpeg?cs=srgb&dl=pexels-roman-odintsov-4958773.jpg&fm=webp&w=1920&fit=crop"
         height={150}
         width={150}
         alt={`{name} Cover`}
-        className=" w-full h-32"
+        className="object-cover w-full h-32"
       />
       {/* Text detail box wrapper */}
-      <div className="m-3">
+      <div className="mx-3 ">
         {/*title and verified*/}
         <div className="flex flex-row mt-3 items-center space-x-1">
-          <p className="text-lg font-bold">{name}</p>
+          <p className="text-lg leading-tight font-bold">{name}</p>
           {verified && (
             //svg wrapper
             <div className="text-teal">
@@ -56,9 +99,10 @@ export default function RestaurantCard({
           )}
         </div>
         {/* Delivery charge and time */}
-        <div className="flex flex-row items-center mt-2 text-sm">
+        <div className="flex flex-row items-center mt-2 text-xs text-gray-7E">
           {/* Delivery Charge*/}
           <div className="flex flex-row items-center">
+            {/* Bike Svg */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -69,7 +113,7 @@ export default function RestaurantCard({
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="size-4 icon icon-tabler icons-tabler-outline icon-tabler-bike"
+              className="text-orange-FE size-4 "
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
@@ -77,19 +121,20 @@ export default function RestaurantCard({
               <path d="M12 19l0 -4l-3 -3l5 -4l2 3l3 0" />
               <path d="M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
             </svg>{" "}
-            <p className="ml-1">
+            <p className="ml-1 ">
               {deliveryCharge === 0 ? "Free Delivery" : `₹${deliveryCharge}`}{" "}
             </p>
           </div>
           {/* Delivery Time */}
-          <div className=" flex flex-row ml-4 items-center">
+          <div className="flex flex-row ml-4 items-center">
+            {/* Clock Svg */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-4 "
+              className="size-4 text-orange-FE"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-5 2.66a1 1 0 0 0 -.993 .883l-.007 .117v5l.009 .131a1 1 0 0 0 .197 .477l.087 .1l3 3l.094 .082a1 1 0 0 0 1.226 0l.094 -.083l.083 -.094a1 1 0 0 0 0 -1.226l-.083 -.094l-2.707 -2.708v-4.585l-.007 -.117a1 1 0 0 0 -.993 -.883z" />
@@ -98,7 +143,7 @@ export default function RestaurantCard({
           </div>
         </div>
         {/*Tags*/}
-        <div className="flex flex-row items-center space-x-2 mt-2">
+        <div className="flex flex-row items-center space-x-2 mt-3">
           {tags.map((tag) => (
             <div
               key={tag}

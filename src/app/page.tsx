@@ -42,27 +42,32 @@ export default function Home() {
         </button>
       </div>
       <FilterBar className="mt-7" />
-      <div>
-        <RestaurantCard
-          name="McDonald's"
-          verified={true}
-          deliveryTime="10-15"
-          deliveryCharge={0}
-          rating={4.5}
-          rateCaount={24}
-          favourite={true}
-          tags={["Fast Food", "Burger"]}
-        />
-        <RestaurantCard
-          name="Burger King"
-          verified={true}
-          deliveryTime="30-40"
-          deliveryCharge={0}
-          rating={4.5}
-          rateCaount={100}
-          favourite={true}
-          tags={["Fast Food", "Burger"]}
-        />
+      {/* Restaurant Cards //TODO the card should have a little white space at end */}
+      <div className=" pr-72 overflow-x-scroll mt-8 -mx-6">
+        <div className="  pb-4 ml-6 flex flex-row">
+          <RestaurantCard
+            className="mr-6"
+            name="McDonald's"
+            verified={true}
+            deliveryTime="10-15"
+            deliveryCharge={0}
+            rating={4.5}
+            rateCaount={24}
+            favourite={true}
+            tags={["Fast Food", "Burger"]}
+          />
+          <RestaurantCard
+            className="mr-6"
+            name="Burger King"
+            verified={true}
+            deliveryTime="30-40"
+            deliveryCharge={0}
+            rating={4.5}
+            rateCaount={100}
+            favourite={true}
+            tags={["Fast Food", "Burger"]}
+          />
+        </div>
       </div>
     </main>
   );
