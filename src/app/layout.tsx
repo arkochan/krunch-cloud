@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { DM_Sans as Sans} from "next/font/google";
+import { DM_Sans as Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Sans({ subsets: ["latin"] });
+const sans = Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"antialiased " + inter.className}>{children}</body>
+      <body className={"antialiased h-screen " + sans.className}>
+        {children}
+      </body>
     </html>
   );
 }
