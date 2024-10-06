@@ -1,6 +1,8 @@
 import { cn } from "@/utils/cn";
 import React from "react";
 import Image from "next/image";
+import HeartButton from "@/components/ui/Favourite";
+import RatingRounded from "@/components/ui/RatingRound";
 export default function RestaurantCard({
   name,
   verified,
@@ -30,44 +32,9 @@ export default function RestaurantCard({
       )}
     >
       {/* Rating*/}
-      <div className="flex flex-row space-x-1 bg-white rounded-full absolute top-2 left-2 px-2 py-1 items-center">
-        <span className="text-xs font-bold">{rating}</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="sharp"
-          stroke-linejoin="sharp"
-          className="text-yellow size-3 icon icon-tabler icons-tabler-outline icon-tabler-star mb-[3px]"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-        </svg>
-        <span className="text-[8px]/4 text-gray-97">({rateCount})</span>
-      </div>
+      <RatingRounded rating={rating} rateCount={rateCount} />
       {/* Favourite */}
-      <div className="text-white size-7 absolute top-2 bg-orange-FE flex items-center justify-cente rounded-full p-1  right-2">
-        {/* Heart Svg */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill={favourite ? "currentColor" : "none"}
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          className="icon icon-tabler icons-tabler-outline icon-tabler-heart"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-        </svg>
-      </div>
+      <HeartButton favourite={favourite} />
       <Image
         src="https://images.pexels.com/photos/4958773/pexels-photo-4958773.jpeg?cs=srgb&dl=pexels-roman-odintsov-4958773.jpg&fm=webp&w=1920&fit=crop"
         height={150}

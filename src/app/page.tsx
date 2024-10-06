@@ -1,13 +1,14 @@
 import FilterBar from "@/components/FilterBar";
-import HeadBar from "@/components/Headbar";
+import HomeHeadbar from "@/components/HomeHeadbar";
 import RestaurantCard from "@/components/RestaurantCard";
 import SearchBar from "@/components/SearchBar";
+import ItemSquare from "@/components/ItemSquare";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="flex mx-6 min-h-screen flex-col ">
-      <HeadBar className="mt-8 " />
+      <HomeHeadbar className="mt-8 " />
       <div className="text-3xl mt-8 font-bold text-gray-32">
         What would you like <br />
         to order?
@@ -74,8 +75,12 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <p>Popular Items</p>
-        <div></div>
+        <p className="text-lg font-semibold">Popular Items</p>
+        <div className="flex flex-row space-x-4">
+          {/* Popular Items */}
+          <ItemSquare />
+          <ItemSquare />
+        </div>
       </div>
     </main>
   );
