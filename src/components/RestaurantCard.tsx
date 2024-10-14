@@ -1,8 +1,8 @@
 import { cn } from "@/utils/cn";
 import React from "react";
 import Image from "next/image";
-import HeartButton from "@/components/ui/Favourite";
-import RatingRounded from "@/components/ui/RatingRound";
+import Favourite from "@/components/ui/Favourite";
+import RatingRound from "@/components/ui/RatingRound";
 export default function RestaurantCard({
   name,
   verified,
@@ -32,9 +32,9 @@ export default function RestaurantCard({
       )}
     >
       {/* Rating*/}
-      <RatingRounded rating={rating} rateCount={rateCount} />
+      <RatingRound rating={rating} rateCount={rateCount} />
       {/* Favourite */}
-      <HeartButton favourite={favourite} />
+      <Favourite favourite={favourite} />
       <Image
         src="https://images.pexels.com/photos/4958773/pexels-photo-4958773.jpeg?cs=srgb&dl=pexels-roman-odintsov-4958773.jpg&fm=webp&w=1920&fit=crop"
         height={150}

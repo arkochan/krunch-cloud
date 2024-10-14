@@ -4,6 +4,7 @@ import RestaurantCard from "@/components/RestaurantCard";
 import SearchBar from "@/components/SearchBar";
 import ItemSquare from "@/components/ItemSquare";
 import Image from "next/image";
+import Bottombar from "@/components/Bottombar";
 
 export default function Home() {
   return (
@@ -76,12 +77,14 @@ export default function Home() {
       </div>
       <div>
         <p className="text-lg font-semibold">Popular Items</p>
-        <div className="flex flex-row space-x-4">
-          {/* Popular Items */}
-          <ItemSquare />
-          <ItemSquare />
+        <div className=" pr-72 overflow-x-scroll mt-4 -mx-6">
+          <div className="  pb-4 ml-6 flex flex-row">
+            <ItemSquare />
+            <ItemSquare />
+          </div>
         </div>
       </div>
+      <Bottombar classname="fixed bottom-0 left-0 right-0" />
     </main>
   );
 }

@@ -1,11 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import HeartSVG from "./svg/heart";
 import Favourite from "@/components/ui/Favourite";
 import RatingRound from "@/components/ui/RatingRound";
+import Image from "next/image";
 export default function ItemSquare() {
   return (
-    <div className="h-56 shadow-1 w-44 overflow-hidden  rounded-2xl">
+    //using cn from utils take a classname props
+    <div className="h-56 mr-6 shadow-1 min-w-44 overflow-hidden rounded-2xl">
       <div className="relative">
         <Image
           className="h-40 rounded-xl w-44 shadow-1 object-cover relative"
