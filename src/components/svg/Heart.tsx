@@ -1,6 +1,8 @@
-import React from "react";
-
-function HeartSVG({ favourite = false }: { favourite?: boolean }) {
+export default function HeartSVG({
+  favourite = false,
+}: {
+  favourite?: boolean;
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,5 +21,3 @@ function HeartSVG({ favourite = false }: { favourite?: boolean }) {
     </svg>
   );
 }
-
-export default HeartSVG;
