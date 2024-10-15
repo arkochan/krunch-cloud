@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import { cn } from "@/utils/cn";
 import CompassSVG from "@/components/svg/Compass";
 import BagSVG from "@/components/svg/Bag";
@@ -7,18 +9,54 @@ import LocationSVG from "@/components/svg/Location";
 import NavBarIcon from "@/components/ui/NavBarIcon";
 
 export default function Bottombar({ classname = "" }: { classname?: string }) {
+  const [activeButton, setActiveButton] = React.useState("compass");
   return (
     <div
       className={cn(
-        "bg-white flex flex-row justify-center w-full h-14",
+        "text-orange-FE bg-white flex flex-row justify-center w-full h-14",
         classname,
       )}
     >
-      <NavBarIcon SvgComponent={<CompassSVG />} />
-      <NavBarIcon SvgComponent={<BagSVG />} />
-      <NavBarIcon SvgComponent={<BellSVG />} />
-      <NavBarIcon SvgComponent={<HeartSVG />} />
-      <NavBarIcon SvgComponent={<LocationSVG />} />
+      <NavBarIcon
+        onclick={() => setActiveButton("compass")}
+        className={cn(
+          "",
+          activeButton == "compass" ? "text-orange-FE" : "text-gray-D3",
+        )}
+        SvgComponent={<CompassSVG />}
+      />
+      <NavBarIcon
+        onclick={() => setActiveButton("bag")}
+        className={cn(
+          "",
+          activeButton == "bag" ? "text-orange-FE" : "text-gray-D3",
+        )}
+        SvgComponent={<BagSVG />}
+      />
+      <NavBarIcon
+        onclick={() => setActiveButton("bell")}
+        className={cn(
+          "",
+          activeButton == "bell" ? "text-orange-FE" : "text-gray-D3",
+        )}
+        SvgComponent={<BellSVG />}
+      />
+      <NavBarIcon
+        onclick={() => setActiveButton("heart")}
+        className={cn(
+          "",
+          activeButton == "heart" ? "text-orange-FE" : "text-gray-D3",
+        )}
+        SvgComponent={<HeartSVG />}
+      />
+      <NavBarIcon
+        onclick={() => setActiveButton("location")}
+        className={cn(
+          "",
+          activeButton == "location" ? "text-orange-FE" : "text-gray-D3",
+        )}
+        SvgComponent={<LocationSVG />}
+      />
     </div>
   );
 }
