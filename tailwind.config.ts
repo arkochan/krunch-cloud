@@ -11,6 +11,9 @@ const config: Config = {
       boxShadow: {
         "1": "0px 15px 30px #e9edf2",
       },
+      dropShadow: {
+        "1": "0px 1px 6px #FFEBAC",
+      },
     },
     colors: {
       gray: {
