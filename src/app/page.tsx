@@ -4,11 +4,11 @@ import RestaurantCard from "@/components/RestaurantCard";
 import SearchBar from "@/components/SearchBar";
 import ItemSquare from "@/components/ItemSquare";
 import Image from "next/image";
-import Bottombar from "@/components/Bottombar";
+import Bottombar from "@/components/BottomNavBar";
 
 export default function Home() {
   return (
-    <main className="flex mx-6 min-h-screen flex-col ">
+    <main className="flex mx-6 min-h-screen pb-10 flex-col ">
       <HomeHeadbar className="mt-8 " />
       <div className="text-3xl mt-8 font-bold text-gray-32">
         What would you like <br />
