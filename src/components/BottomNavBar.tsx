@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 import CompassSVG from "@/components/svg/Compass";
 import BagSVG from "@/components/svg/Bag";
 import BellSVG from "@/components/svg/Bell";
