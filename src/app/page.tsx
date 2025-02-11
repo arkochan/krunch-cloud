@@ -1,10 +1,12 @@
 import FilterBar from "@/components/FilterBar";
 import HomeHeadbar from "@/components/HomeHeadbar";
 import RestaurantCard from "@/components/RestaurantCard";
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/ui/SearchBar";
 import ItemSquare from "@/components/ItemSquare";
 import Image from "next/image";
 import Bottombar from "@/components/BottomNavBar";
+import CardContainer from "@/components/CardContainer";
+import { Search } from "@/components/Search";
 
 export default function Home() {
   return (
