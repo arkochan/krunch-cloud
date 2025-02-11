@@ -1,9 +1,11 @@
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 import React from "react";
 import Image from "next/image";
 import Favourite from "@/components/ui/Favourite";
 import RatingRound from "@/components/ui/RatingRound";
+import Link from "next/link";
 export default function RestaurantCard({
+  id,
   name,
   verified,
   deliveryTime,
@@ -14,6 +16,7 @@ export default function RestaurantCard({
   tags,
   className = "",
 }: {
+  id: number;
   name: string;
   verified: boolean;
   deliveryTime: string;
@@ -25,7 +28,8 @@ export default function RestaurantCard({
   className?: string;
 }) {
   return (
-    <div
+    <Link
+      href={`/restaurant/${id}`}
       className={cn(
         "min-w-64 h-[236px] overflow-hidden rounded-lg shadow relative ",
         className,
@@ -89,7 +93,7 @@ export default function RestaurantCard({
               <path d="M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
             </svg>{" "}
             <p className="ml-1 ">
-              {deliveryCharge === 0 ? "Free Delivery" : `₹${deliveryCharge}`}{" "}
+              {deliveryCharge === 0 ? "Free Delivery" : `BDT ${deliveryCharge}`}{" "}
             </p>
           </div>
           {/* Delivery Time */}
@@ -121,6 +125,6 @@ export default function RestaurantCard({
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
