@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 
 export default function RatingRound({ rateCount, rating, className = "" }: {
   rateCount: number,

@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 export default function NavBarIcon({
   SvgComponent,
   className = "",
