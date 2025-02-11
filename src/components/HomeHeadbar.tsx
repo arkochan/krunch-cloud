@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 import ProfilePhoto from "@/components/ui/ProfilePhoto";
+import Link from "next/link";
 export default function HeardBar({ className = "" }: { className: string }) {
   return (
     <div
@@ -50,7 +51,9 @@ export default function HeardBar({ className = "" }: { className: string }) {
         {/* //TODO: Add Location*/}
         <span className="text-orange-FE">Location</span>
       </div>
-      <ProfilePhoto picture="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?w=250&t=st=1725264514~exp=1725265114~hmac=d1dfdb73697b715c1efc1643b2cdd5c9e7c76eef32dd84340d0ce6eee13fb078" />
+      <Link href="http://localhost:8090/auth/login/google">
+        <ProfilePhoto picture="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?w=250&t=st=1725264514~exp=1725265114~hmac=d1dfdb73697b715c1efc1643b2cdd5c9e7c76eef32dd84340d0ce6eee13fb078" />
+      </Link>
     </div>
   );
 }
