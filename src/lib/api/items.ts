@@ -1,6 +1,6 @@
 import { Item } from "@/types/item";
+import { API_DOMAIN } from "./DOMAIN";
 
-const API_DOMAIN = 'https://api.krunchcloud.com';
 
 
 export const getAllItems = async (): Promise<Item[]> => {
