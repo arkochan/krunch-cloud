@@ -5,6 +5,7 @@ import SearchBar from "@/components/ui/SearchBar";
 import ItemSquare from "@/components/ItemSquare";
 import Image from "next/image";
 import Bottombar from "@/components/BottomNavBar";
+import HeroMenu from "@/components/HEroMenu";
 import CardContainer from "@/components/CardContainer";
 import { Search } from "@/components/Search";
 import { getAllRestaurants } from "@/lib/api/restaurants";
@@ -37,8 +38,8 @@ export default async function Home() {
           <p className="text-lg font-semibold">Popular Items</p>
           <div className=" pr-72 overflow-x-scroll mt-4 -mx-6">
             <div className="  pb-4 ml-6 flex flex-row">
-              <ItemSquare />
-              <ItemSquare />
+              {/* <ItemSquare /> */}
+              {/* <ItemSquare /> */}
             </div>
           </div>
         </div>
