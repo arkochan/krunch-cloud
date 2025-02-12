@@ -1,32 +1,71 @@
+"use client";
 import Favourite from "@/components/ui/Favourite";
 import RatingRound from "@/components/ui/RatingRound";
 import Image from "next/image";
-export default function ItemSquare() {
+import Add from "./svg/Add";
+import { useCartStore } from "@/store/cartStore";
+interface ItemSquareProps {
+  id: number;
+  imageUrl: string;
+  favourite: boolean;
+  price: number;
+  rating: number;
+  rateCount: number;
+  title: string;
+  description: string;
+}
+
+export default function ItemSquare({
+  id,
+  imageUrl,
+  favourite,
+  price,
+  rating,
+  rateCount,
+  title,
+  description,
+}: ItemSquareProps) {
+  // use the cart store to add an item to the cart
+  const addItemToCart = useCartStore((state) => state.addItem);
+
+  // interface CartItem {
+  //   itemId: number;
+  //   name: string;
+  //   price: number;
+  //   quantity: number;
+  // }
+  function addItem() {
+    addItemToCart({ itemId: id, name: title, price, quantity: 1, image_url: imageUrl })
+    console.log("Item added to cart")
+  }
   return (
     //using cn from utils take a classname props
-    <div className="h-56 mr-6 shadow-1 min-w-44 overflow-hidden rounded-2xl">
+    <div onClick={() => addItem()} className="h-56 mr-6 shadow-1 min-w-44 overflow-hidden rounded-2xl">
       <div className="relative">
         <Image
           className="h-40 rounded-xl w-44 shadow-1 object-cover relative"
-          src="https://images.deliveryhero.io/image/fd-bd/LH/crjq-listing.jpg?width=400&height=225"
+          src={imageUrl}
           width={300}
           height={300}
           alt=""
         />
-        <Favourite favourite={true} />
+        <Favourite favourite={favourite} />
+        <div onClick={() => addItem()} className="absolute right-2 top-2 bg-white rounded-full px-2 py-1">
+          <Add className="" />
+        </div>
         <div className="absolute top-2 left-2 bg-white rounded-full px-2 py-1">
           <span className="text-orange-FE">$</span>
-          <span className="text-xl">8.25</span>
+          <span className="text-xl">{price.toFixed(2)}</span>
         </div>
         <RatingRound
           className="absolute left-2 shadow bottom-0 -my-3 top-auto bg-white"
-          rating={4.5}
-          rateCount={200}
+          rating={rating}
+          rateCount={rateCount}
         />
       </div>
       <div className="px-2 py-4">
-        <p>Salmon Salad</p>
-        <p>Baked salmon fish</p>
+        <p>{title}</p>
+        <p>{description}</p>
       </div>
     </div>
   );
