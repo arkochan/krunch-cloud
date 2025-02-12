@@ -1,3 +1,4 @@
+import ItemSquare from "@/components/ItemSquare"
 import { getRestaurantById } from "@/lib/api/restaurants"
 
 export default async function Page({
@@ -9,5 +10,27 @@ export default async function Page({
   const restaurant = await getRestaurantById(restaurantID)
   console.log(restaurant)
 
-  return <div className="text-orange-FE text-3xl font-bold shadow-gray-32"> {restaurant.name}</div>
+  return (
+    <div>
+      <div className="text-orange-FE text-3xl font-bold shadow-gray-32">
+        {restaurant.name}
+      </div >
+      <div className="flex flex-row">
+        {restaurant.items.map((item) => (
+          <div key={item.id}>
+            <ItemSquare
+              id={item.id}
+              imageUrl={item.image_url}
+              favourite={true}
+              price={item.price}
+              rating={4.7}
+              rateCount={20}
+              title={item.name}
+              description={item.description}
+            />
+          </div>
+        ))}
+      </div>
+    </div >
+  )
 }
