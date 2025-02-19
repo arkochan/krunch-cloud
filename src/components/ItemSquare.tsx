@@ -27,7 +27,7 @@ export default function ItemSquare({
 }: ItemSquareProps) {
   // use the cart store to add an item to the cart
   const addItemToCart = useCartStore((state) => state.addItem);
-
+  const items = useCartStore((state) => state.items);
   // interface CartItem {
   //   itemId: number;
   //   name: string;
@@ -35,8 +35,11 @@ export default function ItemSquare({
   //   quantity: number;
   // }
   function addItem() {
-    addItemToCart({ itemId: id, name: title, price, quantity: 1, image_url: imageUrl })
-    console.log("Item added to cart")
+    if (id === items[0]?.itemId) {
+      addItemToCart({ itemId: id, name: title, price, quantity: 1, image_url: imageUrl })
+      console.log("Item added to cart")
+    }
+    else alert("Must be from same restarant")
   }
   return (
     //using cn from utils take a classname props
@@ -51,7 +54,7 @@ export default function ItemSquare({
         />
         <Favourite favourite={favourite} />
         <div onClick={() => addItem()} className="absolute right-2 top-2 bg-white rounded-full px-2 py-1">
-          <Add className="" />
+          <Add onClick={() => addItem()} className="" />
         </div>
         <div className="absolute top-2 left-2 bg-white rounded-full px-2 py-1">
           <span className="text-orange-FE">$</span>
