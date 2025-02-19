@@ -11,7 +11,7 @@ export default function Cart({ className }: { className?: string }) {
   const handleConfirmOrder = useCallback(async () => {
     try {
       const orderParams = {
-        restaurant_id: 1, // Replace with actual restaurant ID
+        restaurant_id: items[0]?.itemId, // Replace with actual restaurant ID
         delivery_address: "123 Main St", // Replace with actual delivery address
         payment_method: "credit_card", // Replace with actual payment method
         items: items.map(item => ({
@@ -19,18 +19,6 @@ export default function Cart({ className }: { className?: string }) {
           quantity: item.quantity,
         })),
       };
-
-      // type CreateOrder_Client struct {
-      // 	RestaurantID    uint32                   `json:"restaurant_id"`
-      // 	DeliveryAddress pgtype.Text              `json:"delivery_address"`
-      // 	PaymentMethod   pgtype.Text              `json:"payment_method"`
-      // 	Items           []CreateOrderItem_Client `json:"items"`
-      // }
-      //
-      // type CreateOrderItem_Client struct {
-      // 	ItemID   uint32         `json:"item_id"`
-      // 	Quantity uint32         `json:"quantity"`
-      // }
       const orderId = await createOrder(orderParams);
       console.log(`Order confirmed with ID: ${orderId}`);
     } catch (error) {
