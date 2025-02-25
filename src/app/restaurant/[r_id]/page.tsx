@@ -19,6 +19,7 @@ export default async function Page({
         {restaurant.items.map((item) => (
           <div key={item.id}>
             <ItemSquare
+              restnId={restaurantID}
               id={item.id}
               imageUrl={item.image_url}
               favourite={true}
