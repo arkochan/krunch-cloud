@@ -47,7 +47,7 @@ export default function ItemSquare({
   }
   return (
     //using cn from utils take a classname props
-    <div onClick={() => addItem()} className="h-fit flex-row flex h-56 mr-6 shadow-1 max-w-sm overflow-hidden rounded-2xl">
+    <div onClick={() => addItem()} className="h-fit flex-row flex mr-6 shadow-1 max-w-sm overflow-hidden rounded-2xl">
       <div className="relative ">
         <Image
           className="h-40 rounded-xl w-44 shadow-1 object-cover relative"
