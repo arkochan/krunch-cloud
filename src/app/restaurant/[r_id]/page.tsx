@@ -1,3 +1,4 @@
+import ItemRec from "@/components/ItemRec"
 import ItemSquare from "@/components/ItemSquare"
 import { getRestaurantById } from "@/lib/api/restaurants"
 
@@ -15,10 +16,10 @@ export default async function Page({
       <div className="text-orange-FE text-3xl font-bold shadow-gray-32">
         {restaurant.name}
       </div >
-      <div className="flex flex-row">
+      <div className="flex flex-col">
         {restaurant.items.map((item) => (
           <div key={item.id}>
-            <ItemSquare
+            <ItemRec
               restnId={restaurantID}
               id={item.id}
               imageUrl={item.image_url}
