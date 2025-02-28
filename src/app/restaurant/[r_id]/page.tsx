@@ -12,13 +12,13 @@ export default async function Page({
   console.log(restaurant)
 
   return (
-    <div>
-      <div className="text-orange-FE text-3xl font-bold shadow-gray-32">
+    <div className="max-w-lg mx-auto h-full px-14 w-full shadow-1 ">
+      <div className="mt-16 font-extrabold  text-orange-FE text-3xl shadow-gray-32">
         {restaurant.name}
       </div >
-      <div className="flex flex-col">
+      <div className="w-full border flex flex-col">
         {restaurant.items.map((item) => (
-          <div key={item.id}>
+          <div className="mt-4" key={item.id}>
             <ItemRec
               restnId={restaurantID}
               id={item.id}
