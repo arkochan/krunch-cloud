@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"flex fex-row justify-between mx-10 antialiased h-screen "}>
+      <body className={"flex fex-row justify-between antialiased h-screen "}>
         {children}
         <Cart />
       </body>
