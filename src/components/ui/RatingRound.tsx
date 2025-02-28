@@ -16,9 +16,9 @@ export default function RatingRound({ rateCount, rating, className = "" }: {
         viewBox="0 0 24 24"
         fill="currentColor"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="sharp"
-        stroke-linejoin="sharp"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className="text-yellow size-3 icon icon-tabler icons-tabler-outline icon-tabler-star mb-[3px]"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />

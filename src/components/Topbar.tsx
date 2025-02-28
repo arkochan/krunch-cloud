@@ -13,9 +13,9 @@ export default function Topbar() {
           height="24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
         >
           <path d="M0 0h24v24H0z" stroke="none" />
