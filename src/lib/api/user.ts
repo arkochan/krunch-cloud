@@ -37,6 +37,7 @@ export const loginUser = async (credentials: { username: string; password: strin
 
 export const getUserProfile = async (token: string): Promise<User> => {
   const response = await fetch(`${API_DOMAIN}/user/profile`, {
+    credentials: 'include',
     headers: {
       'Authorization': `Bearer ${token}`,
     },

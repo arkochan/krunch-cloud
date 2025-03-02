@@ -24,6 +24,7 @@ export interface CreateOrderParams {
 export const createOrder = async (order: CreateOrderParams): Promise<number> => {
   const response = await fetch(`${API_DOMAIN}/order/`, {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
