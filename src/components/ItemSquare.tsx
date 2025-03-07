@@ -13,6 +13,7 @@ interface ItemSquareProps {
   rateCount: number;
   title: string;
   description: string;
+  restnId: number;
 }
 
 export default function ItemSquare({
@@ -24,10 +25,13 @@ export default function ItemSquare({
   rateCount,
   title,
   description,
+  restnId,
 }: ItemSquareProps) {
   // use the cart store to add an item to the cart
   const addItemToCart = useCartStore((state) => state.addItem);
   const items = useCartStore((state) => state.items);
+  const activeRest = useCartStore((state) => state.activeRest);
+  const setActiveRest = useCartStore((state) => state.setActiveRest);
   // interface CartItem {
   //   itemId: number;
   //   name: string;
@@ -35,7 +39,7 @@ export default function ItemSquare({
   //   quantity: number;
   // }
   function addItem() {
-    if (id === items[0]?.itemId) {
+    if (activeRest === null || activeRest === restnId) {
       addItemToCart({ itemId: id, name: title, price, quantity: 1, image_url: imageUrl })
       console.log("Item added to cart")
     }
