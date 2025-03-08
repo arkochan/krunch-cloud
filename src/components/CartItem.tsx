@@ -23,7 +23,7 @@ export default function CartItem({
   onDecrease,
 }: CartItemProps) {
   return (
-    <div className={`m-4 p-4 border border-gray-32 h-32 flex flex-row items-center justify-between ${className}`}>
+    <div className={`m-4 p-4 shadow-1 rounded-xl h-32 flex flex-row items-center justify-between ${className}`}>
       <div className="flex">
         <div>
           <Image
