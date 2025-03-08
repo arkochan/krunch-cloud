@@ -16,7 +16,7 @@ export default async function Page({
       <div className="mt-16 font-extrabold  text-orange-FE text-3xl shadow-gray-32">
         {restaurant.name}
       </div >
-      <div className="w-full border flex flex-col">
+      <div className="w-full flex flex-col">
         {restaurant.items.map((item) => (
           <div className="mt-4" key={item.id}>
             <ItemRec
