@@ -39,3 +39,31 @@ export const createOrder = async (order: CreateOrderParams): Promise<number> => 
   return data.orderId;
 };
 
+export interface OrderDetails {
+  orderId: number;
+  restaurant_id: number;
+  delivery_address: string;
+  payment_method: string;
+  items: {
+    item_id: number;
+    quantity: number;
+  }[];
+  // Add other fields as necessary based on the API response
+}
+
+export const getOrderById = async (orderId: number): Promise<OrderDetails> => {
+  const response = await fetch(`${API_DOMAIN}/order/${orderId}`, {
+    method: 'GET',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch order details');
+  }
+
+  const data = await response.json();
+  return data;
+};
