@@ -21,22 +21,31 @@ export interface CreateOrderParams {
 // 	ItemID   uint32         `json:"item_id"`
 // 	Quantity uint32         `json:"quantity"`
 // }
-export const createOrder = async (order: CreateOrderParams): Promise<number> => {
-  const response = await fetch(`${API_DOMAIN}/order/`, {
+export interface CreateOrderResponse {
+  status: number;
+  orderId?: number;
+}
+
+export const createOrder = async (orderParams: any): Promise<CreateOrderResponse> => {
+  const response = await fetch(`${API_DOMAIN}/order`, {
     method: 'POST',
     credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(order),
+    body: JSON.stringify(orderParams),
   });
+
+  if (response.status === 401) {
+    return { status: 401 };
+  }
 
   if (!response.ok) {
     throw new Error('Failed to create order');
   }
 
   const data = await response.json();
-  return data.orderId;
+  return { status: response.status, orderId: data.orderId };
 };
 
 export interface OrderDetails {
