@@ -8,12 +8,13 @@ import { createOrder } from '@/lib/api/order';
 export default function Cart({ className }: { className?: string }) {
   const { items, updateItemQuantity, removeItem } = useCartStore();
 
+
   const handleConfirmOrder = useCallback(async () => {
     try {
       const orderParams = {
         restaurant_id: items[0]?.itemId, // Replace with actual restaurant ID
         delivery_address: "123 Main St", // Replace with actual delivery address
-        payment_method: "credit_card", // Replace with actual payment method
+        payment_method: "credit_card",   // Replace with actual payment method
         items: items.map(item => ({
           item_id: item.itemId,
           quantity: item.quantity,
