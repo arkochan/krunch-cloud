@@ -13,9 +13,14 @@ export default async function Page({
 
   return (
     <div className="max-w-lg mx-auto h-full px-14 w-full shadow-1 ">
-      <div className="mt-16 font-extrabold  text-orange-FE text-3xl shadow-gray-32">
-        {restaurant.name}
-      </div >
+
+      <img src={'placehold.co/600x400'} alt="restaurant" />
+      <div>
+        <div className="mt-16 font-extrabold  text-orange-FE text-3xl shadow-gray-32">
+          {restaurant.name}
+        </div >
+
+      </div>
       <div className="w-full flex flex-col">
         {restaurant.items.map((item) => (
           <div className="mt-4" key={item.id}>
