@@ -5,7 +5,6 @@ import SearchBar from "@/components/ui/SearchBar";
 import ItemSquare from "@/components/ItemSquare";
 import Image from "next/image";
 import Bottombar from "@/components/BottomNavBar";
-import HeroMenu from "@/components/HEroMenu";
 import CardContainer from "@/components/CardContainer";
 import { Search } from "@/components/Search";
 import { getAllRestaurants } from "@/lib/api/restaurants";
